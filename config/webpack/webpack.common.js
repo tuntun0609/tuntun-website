@@ -115,6 +115,10 @@ module.exports = {
 				test: /\.(?:ico|gif|png|jpg|jpeg|webp|svg)$/i,
 				type: 'asset',
 			},
+			{
+				test: /\.md$/,
+				use: 'raw-loader',
+			},
 		],
 	},
 	resolve: {
