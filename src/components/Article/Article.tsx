@@ -13,6 +13,16 @@ export const Article: React.FC<{ md: any }> = ({ md }) => {
 			<ReactMarkdown
 				className='tun-markdown'
 				remarkPlugins={[remarkGfm]}
+				components={{
+					code({node, inline, className, children, ...props}) {
+						// console.log(node, inline, className, children, props);
+						return (
+							<code className={className} {...props}>
+								{children}
+							</code>
+						);
+					},
+				}}
 				// components={{
 				// 	code({node, inline, className, children, ...props}) {
 				// 		const match = /language-(\w+)/.exec(className || '');

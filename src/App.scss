@@ -1,8 +1,46 @@
 $tunPurple: #8b4dff;
-
-.title {
-	font-size: 32px;
-	color: $tunPurple;
-	font-weight: bold;
+html {
+  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: scroll;
 }
-
+* {
+	transition: opacity .2s ease;
+	&::-webkit-scrollbar {
+		width: 10px; /*滚动条的宽度*/
+		height: 8px; /*滚动条的高度*/
+		opacity: 0.3;
+	}
+	
+	&::-webkit-scrollbar-track-piece {
+		background-color: #fff; /*滚动条的背景颜色*/
+		-webkit-border-radius: 0; /*滚动条的圆角宽度*/
+		border-radius: 0;
+		opacity: 0.3;
+	}
+	
+	&::-webkit-scrollbar-thumb {
+		height: 50px;
+		background-color: #ccc;
+		border-radius: 4px;
+		-webkit-border-radius: 4px;
+		outline: 2px solid #fff;
+		outline-offset: -2px;
+		border: 2px solid #fff;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: #9f9f9f;
+	}
+	
+	&:hover::-webkit-scrollbar-thumb {
+		display: block;
+	}
+	
+	&::-webkit-scrollbar-track {
+		opacity: 0;
+	}
+	
+	&::-webkit-scrollbar-track-piece {
+		opacity: 0;
+	}
+}

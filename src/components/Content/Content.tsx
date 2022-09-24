@@ -1,16 +1,19 @@
 import React from 'react';
-
-import { Article } from '../Article/Article';
+import { Route, Routes } from 'react-router-dom';
 
 import style from './Content.scss';
-
-import testMd from '../../md/test.md';
+import { Welcome, NotFind, BlogList, Blog } from '@/pages';
 
 export const Content: React.FC = () => {
 	console.log('Content');
 	return (
 		<div className={style.main}>
-			<Article md={testMd}></Article>
+			<Routes>
+				<Route index element={<Welcome></Welcome>}></Route>
+				<Route path="/blog" element={<BlogList />}></Route>
+				<Route path="/blog/:key" element={<Blog></Blog>}></Route>
+				<Route path="*" element={<NotFind />}></Route>
+			</Routes>
 		</div>
 	);
 };

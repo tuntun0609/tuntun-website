@@ -23,13 +23,13 @@ store.subscribe(() => {
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
-	<React.StrictMode>
-		<Provider store={store}>
-			<BrowserRouter>
-				<ConfigProvider>
-					<App />
-				</ConfigProvider>
-			</BrowserRouter>
-		</Provider>
-	</React.StrictMode>,
+	// <React.StrictMode>
+	<Provider store={store}>
+		<BrowserRouter>
+			<ConfigProvider>
+				<App />
+			</ConfigProvider>
+		</BrowserRouter>
+	</Provider>,
+	// </React.StrictMode>,
 );
