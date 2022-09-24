@@ -25,6 +25,7 @@ specifiers:
   babel-loader: ^8.2.5
   chalk: ^4.1.2
   clean-webpack-plugin: ^4.0.0
+  copy-webpack-plugin: ^11.0.0
   cross-env: ^7.0.3
   css-loader: ^6.7.1
   eslint: ^8.21.0
@@ -115,6 +116,7 @@ devDependencies:
   babel-loader: 8.2.5_xc6oct4hcywdrbo4ned6ytbybm
   chalk: 4.1.2
   clean-webpack-plugin: 4.0.0_webpack@5.74.0
+  copy-webpack-plugin: 11.0.0_webpack@5.74.0
   cross-env: 7.0.3
   css-loader: 6.7.1_webpack@5.74.0
   eslint: 8.21.0
@@ -2965,6 +2967,21 @@ packages:
       toggle-selection: 1.0.6
     dev: false
 
+  /copy-webpack-plugin/11.0.0_webpack@5.74.0:
+    resolution: {integrity: sha512-fX2MWpamkW0hZxMEg0+mYnA40LTosOSa5TqZ9GYIBzyJa9C3QUaMPSE2xAi/buNr8u89SfD9wHSQVBzrRa/SOQ==}
+    engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      webpack: ^5.1.0
+    dependencies:
+      fast-glob: 3.2.11
+      glob-parent: 6.0.2
+      globby: 13.1.2
+      normalize-path: 3.0.0
+      schema-utils: 4.0.0
+      serialize-javascript: 6.0.0
+      webpack: 5.74.0_webpack-cli@4.10.0
+    dev: true
+
   /core-js-compat/3.24.1:
     resolution: {integrity: sha512-XhdNAGeRnTpp8xbD+sR/HFDK9CbeeeqXT6TuofXh3urqEevzkWmLRgrVoykodsw8okqo2pu1BOmuCKrHx63zdw==}
     dependencies:
@@ -4208,6 +4225,17 @@ packages:
       ignore: 5.2.0
       merge2: 1.4.1
       slash: 3.0.0
+    dev: true
+
+  /globby/13.1.2:
+    resolution: {integrity: sha512-LKSDZXToac40u8Q1PQtZihbNdTYSNMuWe+K5l+oa6KgDzSvVrHXlJy40hUP522RjAIoNLJYBJi7ow+rbFpIhHQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      dir-glob: 3.0.1
+      fast-glob: 3.2.11
+      ignore: 5.2.0
+      merge2: 1.4.1
+      slash: 4.0.0
     dev: true
 
   /globby/6.1.0:
@@ -7868,6 +7896,11 @@ packages:
   /slash/3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
+    dev: true
+
+  /slash/4.0.0:
+    resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
+    engines: {node: '>=12'}
     dev: true
 
   /smart-buffer/4.2.0:

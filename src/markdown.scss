@@ -13,30 +13,13 @@
 
 	.tun-markdown {
 		color: rgb(85, 85, 85);
-		#write {
-			max-width: 860px;
-			margin: 0 auto;
-			padding: 30px;
-			padding-bottom: 100px;
+		.repo-list {
+			display: flex;
+			justify-content: space-between;
 		}
-	
-		@media only screen and (min-width: 1400px) {
-			#write {
-				max-width: 1024px;
-			}
+		.repo-list-item {
+			width: calc((100% - 8px) / 2);
 		}
-	
-		@media only screen and (min-width: 1800px) {
-			#write {
-				max-width: 1200px;
-			}
-		}
-	
-		#write > ul:first-child,
-		#write > ol:first-child {
-			margin-top: 30px;
-		}
-	
 		a {
 			color: #4183c4;
 		}

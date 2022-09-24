@@ -1,15 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 import style from './Welcome.scss';
-import 'vditor/dist/index.css';
 
 import { Article, TypedWriter } from '@/components';
 import welcome from '@/md/welcome.md';
 
 export const Welcome: React.FC = () => {
-	const el = useRef(null);
-	const typed = useRef(null);
 	const options = {
 		strings: [
 			'Hi, I am TunTun',

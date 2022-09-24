@@ -1,8 +1,12 @@
 import React from 'react';
 
-export const Project: React.FC = () => {
-	console.log('Project');
-	return (
-		<div>Project</div>
-	);
-};
+import style from './Project.scss';
+
+import { Article } from '@/components';
+import prject from '@/md/project.md';
+
+export const Project: React.FC = () => (
+	<div className={style.main}>
+		<Article md={prject}></Article>
+	</div>
+);

@@ -14,6 +14,15 @@ const App: React.FC = () => {
 	const navigate = useNavigate();
 	const HeaderItems: HeaderProps[] = [
 		{
+			name: 'Home',
+			aProps: {
+				onClick: (e) => {
+					e.preventDefault();
+					navigate('/');
+				},
+			},
+		},
+		{
 			name: 'Project',
 			aProps: {
 				onClick: (e) => {

@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { Configuration } = require('webpack');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const WebpackBar = require('webpackbar');
 
 const { isDevelopment } = require('../scripts/env.js');
@@ -37,7 +38,7 @@ module.exports = {
 	output: {
 		path: resolvePath('../../dist'),
 		filename: '[name].bundle.js',
-		assetModuleFilename: 'images/[hash][ext][query]',
+		assetModuleFilename: 'images/[name][ext][query]',
 	},
 	module: {
 		rules: [
@@ -134,5 +135,13 @@ module.exports = {
 			extensions: ['js', 'jsx', 'ts', 'tsx'],
 		}),
 		new WebpackBar(),
+		new CopyPlugin({
+			patterns: [
+				{
+					from: resolvePath('../../src/md/images'),
+					to: 'images',
+				},
+			],
+		}),
 	],
 };
