@@ -4,6 +4,9 @@ html {
   overflow-x: scroll;
   overflow-y: scroll;
 }
+body {
+	font-size: 16px;
+}
 * {
 	transition: opacity .2s ease;
 	&::-webkit-scrollbar {

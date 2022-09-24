@@ -1,6 +1,6 @@
 /* eslint-disable react/no-children-prop */
 import React from 'react';
-import { YoutubeOutlined, LinkOutlined } from '@ant-design/icons';
+import { YoutubeOutlined, LinkOutlined, YuqueOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -32,6 +32,14 @@ const App: React.FC = () => {
 			},
 		},
 		{
+			name: 'Yuque',
+			icon: <YuqueOutlined />,
+			aProps: {
+				href: 'https://www.yuque.com/webknowledge',
+				target: '_blank',
+			},
+		},
+		{
 			name: 'GitHub',
 			icon: <LinkOutlined />,
 			aProps: {
@@ -40,7 +48,7 @@ const App: React.FC = () => {
 			},
 		},
 		{
-			name: 'bilibili',
+			name: 'Bilibili',
 			icon: <YoutubeOutlined />,
 			aProps: {
 				href: 'https://space.bilibili.com/47706697',

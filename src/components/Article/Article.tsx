@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMdx from 'remark-mdx';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -12,14 +13,27 @@ export const Article: React.FC<{ md: any }> = ({ md }) => {
 		<article>
 			<ReactMarkdown
 				className='tun-markdown'
-				remarkPlugins={[remarkGfm]}
+				remarkPlugins={[
+					remarkGfm,
+					remarkMdx,
+				]}
 				components={{
 					code({node, inline, className, children, ...props}) {
-						// console.log(node, inline, className, children, props);
 						return (
 							<code className={className} {...props}>
 								{children}
 							</code>
+						);
+					},
+					a({node, href, children}) {
+						return (
+							<a target='_blank' href={href} rel="noreferrer">{children}</a>
+						);
+					},
+					img({alt, src, node}) {
+						console.log(node);
+						return (
+							<img alt={alt} src={src}></img>
 						);
 					},
 				}}
