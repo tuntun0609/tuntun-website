@@ -12,6 +12,7 @@
 	}
 
 	.tun-markdown {
+		color: rgb(85, 85, 85);
 		#write {
 			max-width: 860px;
 			margin: 0 auto;
@@ -114,7 +115,7 @@
 		ol,
 		dl,
 		table {
-			margin: 0.8em 0;
+			margin: 1.3em 0;
 		}
 		li > ol,
 		li > ul {
@@ -188,16 +189,8 @@
 		}
 
 		pre {
-			width: 100%;
-			background-color: #f1f0f0;
-			padding: 10px;
+			margin: 0;
 			border-radius: 10px;
-		}
-
-		p code {
-			background-color: #d9d9d9;
-			padding: 2px 4px;
-			border-radius: 4px;
 		}
 		img {
 			max-width: 100%;

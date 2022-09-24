@@ -1,17 +1,25 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react/no-children-prop */
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import remarkMdx from 'remark-mdx';
-import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+// import ReactMarkdown from 'react-markdown';
+// import remarkGfm from 'remark-gfm';
+// import remarkMdx from 'remark-mdx';
+import Markdown from 'markdown-to-jsx';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { monokai } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+const Code = ({className, children} : { className: string, children: any }) => {
+	const language = className?.replace('lang-', '') ?? 'javascript';
+	return (
+		<SyntaxHighlighter style={monokai} language={language}>
+			{children}
+		</SyntaxHighlighter>
+	);
+};
 
 export const Article: React.FC<{ md: any }> = ({ md }) => {
 	console.log('Article');
 	return (
 		<article>
-			<ReactMarkdown
+			{/* <ReactMarkdown
 				className='tun-markdown'
 				remarkPlugins={[
 					remarkGfm,
@@ -37,25 +45,19 @@ export const Article: React.FC<{ md: any }> = ({ md }) => {
 						);
 					},
 				}}
-				// components={{
-				// 	code({node, inline, className, children, ...props}) {
-				// 		const match = /language-(\w+)/.exec(className || '');
-				// 		return !inline && match ? (
-				// 			<SyntaxHighlighter
-				// 				children={String(children).replace(/\n$/, '')}
-				// 				language={match[1]}
-				// 				style={dark as any}
-				// 				PreTag="div"
-				// 				{...props}
-				// 			/>
-				// 		) : (
-				// 			<code className={className} {...props}>
-				// 				{children}
-				// 			</code>
-				// 		);
-				// 	},
-				// }}
-			>{md as string}</ReactMarkdown>
+			>{md as string}</ReactMarkdown> */}
+			<div className='tun-markdown'>
+				<Markdown
+					options={{
+						overrides: {
+							code: Code,
+							a: ({...props}) => (
+								<a target={'_blank'} rel='noreferrer' {...props}></a>
+							),
+						},
+					}}
+				>{md as string}</Markdown>
+			</div>
 		</article>
 	);
 };

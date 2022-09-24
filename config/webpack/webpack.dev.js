@@ -26,7 +26,7 @@ module.exports = merge(common, {
 	stats: 'none',
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'tun react app',
+			title: 'tun website',
 			template: resolvePath('../../public/index.html'),
 			filename: 'index.html',
 			favicon: resolvePath('../../public/favicon.ico'),
