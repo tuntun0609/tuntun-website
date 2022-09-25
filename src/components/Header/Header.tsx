@@ -25,9 +25,10 @@ export const Header: React.FC<{items: HeaderProps[]}> = ({ items }) => {
 					items.map(item => (
 						<a key={item.name} rel='noreferrer' className={style.item} {...item.aProps}>
 							<div className={style.text}>{item.name}</div>
-							<div className={style.icon} >
-								{ item.icon }
-							</div>
+							{ item.icon ?
+								<div className={style.icon} >
+									{ item.icon }
+								</div> : null }
 						</a>
 					))
 				}

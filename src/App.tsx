@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import {
 	Header, HeaderProps,
-	Content,
+	Content, BgRibbon,
 } from './components';
 import style from './App.scss';
 import './markdown.scss';
@@ -70,6 +70,7 @@ const App: React.FC = () => {
 			<div className={style.main}>
 				<Header items={HeaderItems}></Header>
 				<Content></Content>
+				<BgRibbon ribbonWidth={75} globalAlpha={0.2} clickChangeDom={document}></BgRibbon>
 			</div>
 		</>
 	);
