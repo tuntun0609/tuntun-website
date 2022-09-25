@@ -1,3 +1,5 @@
+## Project
+
 Some projects I'm working on:
 
 <div className="repo-list">
@@ -6,5 +8,11 @@ Some projects I'm working on:
 	</a>
 	<a href="https://github.com/tuntun0609/bilibil-tool-mv3" className="repo-list-item">
 		<img alt="bilibil-tool-mv3" src="https://tun-github-readme-stats.vercel.app/api/pin/?username=tuntun0609&repo=bilibil-tool-mv3" />
+	</a>
+	<a href="https://github.com/tuntun0609/leetcode" className="repo-list-item">
+		<img alt="bilibil-tool-mv3" src="https://tun-github-readme-stats.vercel.app/api/pin/?username=tuntun0609&repo=leetcode" />
+	</a>
+	<a href="https://github.com/tuntun0609/school-tool" className="repo-list-item">
+		<img alt="bilibil-tool-mv3" src="https://tun-github-readme-stats.vercel.app/api/pin/?username=tuntun0609&repo=school-tool" />
 	</a>
 </div>
