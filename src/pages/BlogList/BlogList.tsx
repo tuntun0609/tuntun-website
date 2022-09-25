@@ -1,23 +1,50 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Row, Col, Card } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
-import { mdList } from '../blogPages';
+import { mdList, mdListItem } from '../blogPages';
 
 import style from './BlogList.scss';
 
-export const BlogList: React.FC = () => {
-	console.log('BlogList');
+const BlogItem = ({ data }: { data: mdListItem }) => {
 	const navigate = useNavigate();
 	return (
+		<Col span={12}>
+			<Card
+				hoverable
+				onClick={() => {
+					navigate(data.key);
+				}}
+				style={{
+					borderRadius: '10px',
+					height: '100%',
+				}}
+			>
+				<div
+					title={data.title ? data.title.toString() : data.key}
+					className={style.itemTitle}
+				>{ data.title ?? data.key }</div>
+				<div className={style.itemContent}>
+					{
+						data.desc ? <span className={style.itemDesc}>{ data.desc }</span> : null
+					}
+				</div>
+			</Card>
+		</Col>
+	);
+};
+
+export const BlogList: React.FC = () => {
+	console.log('BlogList');
+	return (
 		<div className={style.main}>
-			{
-				mdList.map(item => (
-					<Button key={item.key} onClick={() => {
-						navigate(item.key);
-					}}>test</Button>
-				))
-			}
+			<Row gutter={[12, 8]} wrap>
+				{
+					mdList.map(item => (
+						<BlogItem key={item.key} data={item}></BlogItem>
+					))
+				}
+			</Row>
 		</div>
 	);
 };

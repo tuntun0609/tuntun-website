@@ -8,7 +8,6 @@ import { NotFind } from '@/pages';
 export const Blog: React.FC = () => {
 	const { key } = useParams();
 	const render = mdList.find(item => item.key === key)?.render;
-	console.log(key);
 	return (
 		render ?
 			<div className={style.main}>
