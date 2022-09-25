@@ -1,6 +1,6 @@
 /* eslint-disable react/no-children-prop */
 import React from 'react';
-import { YoutubeOutlined, LinkOutlined, YuqueOutlined } from '@ant-design/icons';
+import { YoutubeOutlined, YuqueOutlined, GithubOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -50,7 +50,7 @@ const App: React.FC = () => {
 		},
 		{
 			name: 'GitHub',
-			icon: <LinkOutlined />,
+			icon: <GithubOutlined />,
 			aProps: {
 				href: 'https://github.com/tuntun0609',
 				target: '_blank',
