@@ -2,7 +2,7 @@ import React from 'react';
 // import ReactMarkdown from 'react-markdown';
 // import remarkGfm from 'remark-gfm';
 // import remarkMdx from 'remark-mdx';
-import Markdown from 'markdown-to-jsx';
+import { compiler } from 'markdown-to-jsx';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
@@ -16,9 +16,29 @@ const Code = ({className, children} : { className: string, children: any }) => {
 };
 
 export const Article: React.FC<{ md: any }> = ({ md }) => {
-	console.log('Article');
+	const mdData = compiler(md, {
+		wrapper: null,
+		overrides: {
+			code: Code,
+			a: ({...props}) => (
+				<a target={'_blank'} rel='noreferrer' {...props}></a>
+			),
+		},
+	});
 	return (
-		<article>
+		<article className='tun-markdown'>
+			{mdData}
+			{/* <Markdown
+				options={{
+					overrides: {
+						code: Code,
+						a: ({...props}) => (
+							<a target={'_blank'} rel='noreferrer' {...props}></a>
+						),
+					},
+				}}
+			>{md as string}</Markdown> */}
+
 			{/* <ReactMarkdown
 				className='tun-markdown'
 				remarkPlugins={[
@@ -46,18 +66,6 @@ export const Article: React.FC<{ md: any }> = ({ md }) => {
 					},
 				}}
 			>{md as string}</ReactMarkdown> */}
-			<div className='tun-markdown'>
-				<Markdown
-					options={{
-						overrides: {
-							code: Code,
-							a: ({...props}) => (
-								<a target={'_blank'} rel='noreferrer' {...props}></a>
-							),
-						},
-					}}
-				>{md as string}</Markdown>
-			</div>
 		</article>
 	);
 };

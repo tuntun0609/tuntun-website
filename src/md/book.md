@@ -1,3 +1,9 @@
+---
+key: book
+title: 前端书籍
+desc: 前端常读书籍整理，大部分提供了下载链接
+---
+
 # 前端书籍整理
 
 [《JavaScript高级程序设计-第四版》](https://www.aliyundrive.com/s/cw4uLV2A2hi)
