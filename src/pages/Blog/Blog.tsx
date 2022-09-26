@@ -11,7 +11,9 @@ export const Blog: React.FC = () => {
 	return (
 		render ?
 			<div className={style.main}>
-				{ render }
+				<article className='tun-markdown'>
+					{ render }
+				</article>
 			</div> :
 			<NotFind></NotFind>
 	);

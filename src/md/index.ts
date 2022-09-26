@@ -1,9 +1,7 @@
-import testMd from './forin-or-forof.md';
-import bookMd from './book.md';
-import test from './test.md';
+import interview from './interview.md';
+import knowledge from './knowledge.md';
 
 export {
-	test,
-	bookMd,
-	testMd,
+	interview,
+	knowledge,
 };
